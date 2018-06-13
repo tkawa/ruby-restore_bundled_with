@@ -1,7 +1,7 @@
 module RestoreBundledWith
   # The lock file
   class Lock < RestoreFromRepository::TargetFile
-    REGEX_BUNDLED_WITH = /^(?<pick>(?:\r\n|\r|\n)^BUNDLED WITH.*(?:\r\n|\r|\n).+(?:\r\n|\r|\n))/
+    REGEX_BUNDLED_WITH = /^(?<pick>(?:\r\n|\r|\n)^(?:RUBY VERSION|BUNDLED WITH).+)/m
     FILE_NAME = 'Gemfile.lock'.freeze
 
     # @param text [String] base lock file
